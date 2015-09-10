@@ -193,7 +193,6 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 	{
 		require_once($this->plugin->getDirectory() . '/lib/urlsigner.class.php');
 		$url_signer = new URLSigner();
-		$url_signer->appendMAC($url, $auth_pwd);
 		return $url_signer->appendMAC($url, $auth_pwd);
 	}
 }
