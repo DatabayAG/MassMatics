@@ -26,7 +26,9 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 		$this->ilUser 	= $ilUser;
 	}
 
-
+	/**
+	 *
+	 */
 	function executeCommand()
 	{
 		$next_class = $this->ctrl->getNextClass();
@@ -43,9 +45,10 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 				break;
 		}
 	}
-	
-	
 
+	/**
+	 *
+	 */
 	function insert()
 	{
 		$form = $this->initForm(true);
@@ -53,7 +56,7 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 	}
 	
 	/**
-	 * Save new pc example element
+	 * Save new massmatics element
 	 */
 	public function create()
 	{
@@ -74,8 +77,10 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 		$form->setValuesByPost();
 		$this->tpl->setContent($form->getHtml());
 	}
-	
 
+	/**
+	 *
+	 */
 	function edit()
 	{		
 		$this->setTabs("edit");
@@ -83,8 +88,10 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 		$form = $this->initForm();
 		$this->tpl->setContent($form->getHTML());		
 	}
-	
 
+	/**
+	 *
+	 */
 	function update()
 	{
 		$form = $this->initForm(true);
@@ -105,7 +112,11 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 		$this->tpl->setContent($form->getHtml());
 
 	}
-	
+
+	/**
+	 * @param bool|false $a_create
+	 * @return ilPropertyFormGUI
+	 */
 	public function initForm($a_create = false)
 	{
 		include_once("Services/Form/classes/class.ilPropertyFormGUI.php");
@@ -171,7 +182,10 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 		$tpl->setVariable("HEIGHT", $this->ilSetting->get('massmatics_height'));
 		return $tpl->get();
 	}
-	
+
+	/**
+	 * @param $a_active
+	 */
 	function setTabs($a_active)
 	{
 		$pl = $this->getPlugin();
@@ -180,15 +194,24 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 
 		$this->ilTabs->activateTab($a_active);
 	}
-	
-	function getMassMaticsUrl($a_properties)
+
+	/**
+	 * @param array $a_properties
+	 * @return String
+	 */
+	function getMassMaticsUrl(array $a_properties)
 	{
 		$url = $this->ilSetting->get('massmatics_url');
 		$url .= '?user=' . $this->ilUser->getId();
 		$url .= '&ct_id=' . $a_properties['ct_id'];
 		return $this->buildMassMaticsUrlWithUrlSigner($url,  $a_properties['auth_pwd']);
 	}
-	
+
+	/**
+	 * @param $url
+	 * @param $auth_pwd
+	 * @return String
+	 */
 	private function buildMassMaticsUrlWithUrlSigner($url, $auth_pwd)
 	{
 		require_once($this->plugin->getDirectory() . '/lib/urlsigner.class.php');
