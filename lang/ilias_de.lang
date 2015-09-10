@@ -1,0 +1,12 @@
+<!-- language file start -->
+cmd_insert#:#MassMatics Element einfügen
+edit_ex_el#:#MassMatics Element bearbeiten
+ct_id#:#Content Id
+auth_pwd#:#Authorisation Password
+mode#:#Mode
+property#:#Eigentschaften
+config#:#Konfiguration
+height#:#Höhe
+width#:#Breite
+massmatics_plugin_configuration#:#Massmatics Plugin Konfiguration
+massmatics_url#:#Url für Massmatics Server

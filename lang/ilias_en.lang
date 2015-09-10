@@ -1,13 +1,8 @@
-//
-// Copyright (c) 2012 Leifos GmbH, GPL2, see docs/LICENSE
-//
-
 <!-- language file start -->
 cmd_insert#:#Insert MassMatics Element
 edit_ex_el#:#Edit MassMaticsElement
 ct_id#:#Content Id
 auth_pwd#:#Authorization Password
-content_plugin_version#:#Content last edited with version
 mode#:#Mode
 property#:#Property
 config#:#Config

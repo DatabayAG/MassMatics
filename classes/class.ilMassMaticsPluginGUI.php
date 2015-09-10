@@ -184,7 +184,6 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 	function getMassMaticsUrl($a_properties)
 	{
 		$url = $this->ilSetting->get('massmatics_url');
-		$url = 'http://heise.de';
 		$url .= '?user=' . $this->ilUser->getId();
 		$url .= '&ct_id=' . $a_properties['ct_id'];
 		return $this->buildMassMaticsUrlWithUrlSigner($url,  $a_properties['auth_pwd']);
@@ -195,7 +194,7 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 		require_once($this->plugin->getDirectory() . '/lib/urlsigner.class.php');
 		$url_signer = new URLSigner();
 		$url_signer->appendMAC($url, $auth_pwd);
-		return $url;
+		return $url_signer->appendMAC($url, $auth_pwd);
 	}
 }
 
