@@ -12,6 +12,36 @@ include_once("./Services/COPage/classes/class.ilPageComponentPluginGUI.php");
 class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 {
 	/**
+	 * @var ilCtrl
+	 */
+	protected $ctrl;
+
+	/**
+	 * @var ilLanguage
+	 */
+	protected $lng;
+
+	/**
+	 * @var ilSetting
+	 */
+	protected $ilSetting;
+
+	/**
+	 * @var ilTemplate
+	 */
+	protected $tpl;
+
+	/**
+	 * @var ilTabsGUI
+	 */
+	protected $ilTabs;
+
+	/**
+	 * @var ilObjUser
+	 */
+	protected $ilUser;
+	
+	/**
 	 * ilMassMaticsPluginGUI constructor.
 	 */
 	public function __construct()
@@ -166,11 +196,13 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
 	{
 		$this->returnToParent();
 	}
-	
+
 	/**
 	 * Get HTML for element
-	 *
-	 * @param string $a_mode (edit, presentation, preview, offline)s
+	 * @return string $html
+	 * @param       $a_mode
+	 * @param array $a_properties
+	 * @param       $a_plugin_version
 	 * @return string $html
 	 */
 	function getElementHTML($a_mode, array $a_properties, $a_plugin_version)

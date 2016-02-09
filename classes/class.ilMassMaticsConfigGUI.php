@@ -9,11 +9,38 @@ include_once './Services/Component/classes/class.ilPluginConfigGUI.php';
  */
 class ilMassMaticsConfigGUI extends ilPluginConfigGUI
 {
+
+
+	/**
+	 * @var ilCtrl
+	 */
+	protected $ilCtrl;
+
+	/**
+	 * @var ilLanguage
+	 */
+	protected $lng;
+
+	/**
+	 * @var ilSetting
+	 */
+	protected $ilSetting;
+
+	/**
+	 * @var ilTemplate
+	 */
+	protected $tpl;
+
 	/**
 	 * ilMassMaticsConfigGUI constructor.
 	 */
 	public function __construct()
 	{
+		/**
+		 * ilLanguage $lng
+		 * 
+		 * 
+		 */
 		global $lng, $ilCtrl, $ilSetting, $tpl;
 		
 		$this->ilCtrl 		= $ilCtrl;

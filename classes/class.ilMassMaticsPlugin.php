@@ -41,7 +41,6 @@ class ilMassMaticsPlugin extends ilPageComponentPlugin
 	 */
 	function getJavascriptFiles()
 	{
-		//return array("js/pcexp.js");
 		return array();
 	}
 	
@@ -50,7 +49,6 @@ class ilMassMaticsPlugin extends ilPageComponentPlugin
 	 */
 	function getCssFiles()
 	{
-		//return array("css/pcexp.css");
 		return array();
 	}
 
