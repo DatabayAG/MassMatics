@@ -29,7 +29,7 @@ class ilMassMaticsPlugin extends ilPageComponentPlugin
 	 */
 	function isValidParentType($a_parent_type)
 	{
-		if (in_array($a_parent_type, array("lm", "wpg")))
+		if (in_array($a_parent_type, array("cont")))
 		{
 			return true;
 		}
