@@ -39,7 +39,7 @@ class ilMassMaticsPlugin extends ilPageComponentPlugin
 	/**
 	 * Get Javascript files
 	 */
-	function getJavascriptFiles()
+	function getJavascriptFiles($a_mode)
 	{
 		return array();
 	}
@@ -47,7 +47,7 @@ class ilMassMaticsPlugin extends ilPageComponentPlugin
 	/**
 	 * Get css files
 	 */
-	function getCssFiles()
+	function getCssFiles($a_mode)
 	{
 		return array();
 	}
