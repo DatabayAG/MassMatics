@@ -46,14 +46,14 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
      */
     public function __construct()
     {
-        global $ilCtrl, $lng, $ilSetting, $ilTabs, $tpl, $ilUser;
+        global $DIC;
 
-        $this->ctrl = $ilCtrl;
-        $this->tpl = $tpl;
-        $this->ilTabs = $ilTabs;
-        $this->lng = $lng;
-        $this->ilSetting = $ilSetting;
-        $this->ilUser = $ilUser;
+        $this->ctrl = $DIC->ctrl();
+        $this->tpl = $DIC->ui()->mainTemplate();
+        $this->ilTabs = $DIC->tabs();
+        $this->lng = $DIC->language();
+        $this->ilSetting = $DIC->settings();
+        $this->ilUser = $DIC->user();
     }
 
     /**
@@ -89,7 +89,6 @@ class ilMassMaticsPluginGUI extends ilPageComponentPluginGUI
      */
     public function initForm($a_create = false)
     {
-        include_once("Services/Form/classes/class.ilPropertyFormGUI.php");
         $form = new ilPropertyFormGUI();
 
         $ct_id = new ilTextInputGUI($this->getPlugin()->txt("ct_id"), "ct_id");
