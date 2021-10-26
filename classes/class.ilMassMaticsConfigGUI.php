@@ -37,17 +37,12 @@ class ilMassMaticsConfigGUI extends ilPluginConfigGUI
      */
     public function __construct()
     {
-        /**
-         * ilLanguage $lng
-         *
-         *
-         */
-        global $lng, $ilCtrl, $ilSetting, $tpl;
+        global $DIC;
 
-        $this->ilCtrl = $ilCtrl;
-        $this->lng = $lng;
-        $this->ilSetting = $ilSetting;
-        $this->tpl = $tpl;
+        $this->ilCtrl = $DIC->ctrl();
+        $this->lng = $DIC->language();
+        $this->ilSetting = $DIC->settings();
+        $this->tpl = $DIC->ui()->mainTemplate();
     }
 
     /**
@@ -84,7 +79,6 @@ class ilMassMaticsConfigGUI extends ilPluginConfigGUI
 
         $pl = $this->getPluginObject();
 
-        include_once("Services/Form/classes/class.ilPropertyFormGUI.php");
         $form = new ilPropertyFormGUI();
 
         $ti = new ilTextInputGUI($pl->txt("massmatics_url"), "massmatics_url");
